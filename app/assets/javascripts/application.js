@@ -21,5 +21,5 @@
 flatpickr('.form-datepicker',{
     altInput: true,
     altFormat: 'j F Y',
-    minDate: new Date()
+    /*minDate: new Date()*//* si minDate > value le champ est vide*/
 })

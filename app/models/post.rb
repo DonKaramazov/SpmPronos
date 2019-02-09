@@ -6,7 +6,7 @@ class Post < ApplicationRecord
             inclusion: { in: ['En ligne','Hors ligne'], message: "accepte pour valeur \"En ligne\" et \"Hors ligne\""},
             presence: true
     validates :body,presence: true
-    validate :published_at_not_past
+    validate :published_at_not_past, on: :create
 
 
     private 
