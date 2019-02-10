@@ -23,3 +23,7 @@ flatpickr('.form-datepicker',{
     altFormat: 'j F Y',
     /*minDate: new Date()*//* si minDate > value le champ est vide*/
 })
+
+$('.toast-flash').delay(3000).fadeOut('slow');
+
+

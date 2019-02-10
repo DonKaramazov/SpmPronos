@@ -1,3 +1,41 @@
-<h1><%= @post.title %></h1>
+<% content_for(:title,@post.title) %>
+
+<h2><%= @post.title %></h2>
+<br>
 
 <%= raw @post.body %>
+
+<br>
+<br>
+<hr>
+
+<h4><%= @post.comments_count %> Commentaires</h4>
+<div style="margin-bottom:40px;">
+    <%= form_for([@post,Comment.new] , remote: true, html: {class: 'row'}) do |f| %>
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.text_area :content,class:"form-control"  %>
+            </div>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Envoyer</button>
+        </div>
+    <% end %>
+</div>
+
+
+
+
+<% @post.comments.each do |comment| %>
+    <div class="comment">
+        <% if comment.user.avatar %>
+            <%= image_tag  comment.user.avatar_url,:class => "comment-avatar" %>
+        <% end %>
+        <div class="comment-body">
+            <span class="comment-author"><%= comment.user.username %></span>
+            <div class="comment-text">
+                <p><%= comment.content %></p>    
+            </div>
+        </div>
+    </div>    
+<%end%>

@@ -23,3 +23,42 @@
      margin-top: 20px;
  }
 
+ /* Commentaires */
+.comment {
+    padding: 10px;
+    margin-bottom: 1.875rem;
+    position: relative;
+    border: 1px solid #ebebeb;
+    background-color: #f4f4f4;
+    font-size: .9rem;
+    border-radius: 3px;
+}
+
+.comment-avatar {
+    position: absolute;
+    left: 10px;
+    width: 54px;
+    height: 54px;
+    padding: 3px;
+    background-color: #fff;
+    border-radius: 50px;
+    -webkit-box-shadow: 0 1px 9px #e0e0e0, inset 0 0 2px hsla(0,0%,84%,.75);
+    box-shadow: 0 1px 9px #e0e0e0, inset 0 0 2px hsla(0,0%,84%,.75);
+}
+
+.comment-body {
+    margin-left: 70px;
+}
+
+.comment-author {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.comment-text p {
+    margin-bottom: 0;
+}
+
+
+
+

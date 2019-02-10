@@ -1,4 +1,4 @@
-<h1>Les actualites</h1>
+<h2>Les actualites</h2>
 
 <a href="<%= new_post_path %>" class="btn btn-primary">Ajouter une actualité</a>
 
@@ -16,11 +16,12 @@
             <tr>
                 <td>
                     <!-- les actions -->
-                    <%= link_to 'Modifier', edit_post_path(post.id) %>
-                    <%= link_to 'Supprimer', post_path(post.id),
+                    <%= link_to_image 'edit_32x32',edit_post_path(post.id), title: "modifier" %>
+                    <%= link_to_image 'delete_32x32',post_path(post.id),
                         method: :delete,
-                        data: { confirm: 'Etes vous sûre ?' }
-                     %>
+                        data: { confirm: 'Etes vous sûre ?' },
+                        title: 'supprimer'
+                    %> 
                 </td>
                 <td><%= post.title %></td>
                 <td><%= post.published_at %></td>
